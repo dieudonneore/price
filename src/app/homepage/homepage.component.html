@@ -1,0 +1,63 @@
+<div>
+  <div id="bod" class="screen">
+
+    <mat-toolbar>
+      <mat-toolbar-row>
+        <img src='.././assets/images/afriquepricelogo.png' alt="" class="logo"/>
+      </mat-toolbar-row>
+    </mat-toolbar>
+
+    <div class="content">
+      <app-sidecontent></app-sidecontent>
+    </div>
+
+    <div class="content">
+      <!--<app-centercontent (product)='message=$event'></app-centercontent>-->
+      <div id="centercontent">
+        <mat-list >
+          <mat-list-item *ngFor="let info of infos" (click)="displaydetails(info)">
+            <div mat-line class="itemright">{{info?.country}}</div>
+            <div mat-line>
+              <div mat-line>{{info?.Product}}<img src="{{info?.image}}" width="30px" height="30px"  align="right" alt/></div>
+            </div>
+            <div mat-line class="itemright">{{info?.Price}}</div>
+            <mat-divider></mat-divider>
+          </mat-list-item>
+        </mat-list>
+      </div>
+    </div>
+  </div>
+
+    <div class="screen">
+      <div class="componentright"><app-rightcontent></app-rightcontent></div>
+      <div class="displaycard">
+
+        <mat-card class="detail" >
+
+          <mat-card-header>
+            <mat-card-title>{{detailsproduct?.Product}}</mat-card-title>
+          </mat-card-header>
+
+          <mat-card-content>
+            <p align="center">
+              <img src="{{detailsproduct?.flag}}" width="10px" height="10px" alt/>{{detailsproduct?.country}}
+              <img src="{{detailsproduct?.image}}"  width="100px" alt/>
+              {{detailsproduct?.Details}}
+              {{detailsproduct?.Price}}
+            </p>
+
+
+          </mat-card-content>
+
+        </mat-card>
+
+      </div>
+    </div>
+
+
+</div>
+
+
+
+
+
